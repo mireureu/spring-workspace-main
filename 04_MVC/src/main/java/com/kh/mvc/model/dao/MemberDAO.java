@@ -25,7 +25,7 @@ public class MemberDAO {
 	 * updateMember -> 파라미터 : Member vo
 	 * */
 	public List<Member> showAllMeber(){
-		return sqlSession.selectList("memberMapper.showAllmember");
+		return sqlSession.selectList("memberMapper.showAllMember");
 	}
 	public List<Member> findMember(String keyword){
 		return sqlSession.selectList("memberMapper.findMember", keyword);

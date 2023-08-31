@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,12 +11,12 @@
 
 	<h2>회원 정보 수정</h2>
 	
-	<form action="/update.do" method="post">
+	<form action="updateMember" method="post">
 		<input type="hidden" name="command" value="update">
 		ID : <input type="text" name="id" value="${vo.id}" readonly><br>
-		PASSWORD : <input type="password" name="password" value="${vo.password}"><br>
+		PASSWORD : <input type="password" name="pwd" value="${vo.pwd}"><br>
 		NAME : <input type="text" name="name" value="${vo.name}"><br>
-		ADDRESS : <input type="text" name="address" value="${vo.address}"><br>
+		ADDRESS : <input type="text" name="addr" value="${vo.addr}"><br>
 		<input type="submit" value="정보수정">
 	</form>
 
