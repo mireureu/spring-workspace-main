@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import cok.kh.api.model.Greeting;
+import com.kh.api.model.Greeting;
 
 @RestController
 public class GreetingController {

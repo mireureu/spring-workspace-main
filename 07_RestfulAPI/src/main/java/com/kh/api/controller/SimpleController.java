@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import cok.kh.api.model.Person;
+import com.kh.api.model.Person;
 
 /*
  * Rest (Representational State Transfer )

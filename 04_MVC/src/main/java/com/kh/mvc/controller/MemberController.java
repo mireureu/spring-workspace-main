@@ -45,8 +45,6 @@ public class MemberController {
 	@RequestMapping("signUp")
 	public String signUp(Member member) {
 		service.registerMember(member);
-//		System.out.println(member);
-		// 비즈니스 로직
 		return "redirect:/";
 	}
 	
@@ -104,4 +102,28 @@ public class MemberController {
 		return "redirect:/";
 				
 	}
+}
+
+@Controller
+public class MemberController {
+
+    private final MemberService memberService;
+
+    @Autowired
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
+    }
+
+    @PostMapping("/signup")
+    public String signUp(Member member, HttpServletRequest request) {
+        boolean signUpSuccess = memberService.signUp(member);
+
+        if (signUpSuccess) {
+            HttpSession session = request.getSession();
+            session.setAttribute("vo", member);
+            return "signup_success"; // 회원가입 성공 페이지로 이동
+        } else {
+            return "signup_failure"; // 회원가입 실패 페이지로 이동
+        }
+    }
 }
